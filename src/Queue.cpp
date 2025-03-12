@@ -34,6 +34,34 @@ Queue::Queue(const Queue &obj) {
 
 }
 
+Queue& Queue::operator=(const Queue &obj) {
+    if (this != &obj) {
+
+        // Clearing the Queue
+        while (first_node != nullptr) {
+            Node* temp = first_node;
+            first_node = first_node->next;
+            delete temp;
+        }
+
+        // Resetting members
+        first_node = nullptr;
+        last_node = nullptr;
+        count = 0;
+        front = 0;
+        rear = 0;
+
+        // Copy nodes
+        Node *current = obj.first_node;
+        while (current != nullptr) {
+            this->append(current->entry);
+            current = current->next;
+        }
+    }
+
+    return *this;
+}
+
 
 Queue::~Queue() {
     while(first_node != nullptr) {

@@ -15,6 +15,7 @@ public:
 
     Queue();
     Queue(const Queue &obj);
+    Queue& operator=(const Queue &obj);
     ~Queue();
 
     Error_code append(const Queue_entry &item);
