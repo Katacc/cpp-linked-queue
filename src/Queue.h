@@ -14,14 +14,16 @@ class Queue {
 public:
 
     Queue();
+    Queue(const Queue &obj);
     ~Queue();
 
     Error_code append(const Queue_entry &item);
     Error_code retrieve_first(Queue_entry &item) const;
     Error_code retrieve_last(Queue_entry &item) const;
     Error_code serve();
-    void print_que();
-    void leng();
+    Error_code empty();
+    void print_que() const;
+    int leng() const;
 
 protected:
     int count;

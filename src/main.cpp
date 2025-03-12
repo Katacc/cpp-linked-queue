@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Node.h"
 #include "Queue.h"
 
 using namespace std;
+
 
 int main() {
 
@@ -16,23 +16,41 @@ int main() {
     que.append(3);
     que.append(5);
     que.append(6);
-    que.leng();
+    cout << "Length of que: " << que.leng() << endl;
     que.serve();
     que.serve();
     que.serve();
     que.append(10);
     que.append(12);
-    que.leng();
+
+    cout << "Length of que: " << que.leng() << endl;
 
     if (que.retrieve_first(item) == underflow) {
         cout << "Empty..." << endl;
+    } else {
+        cout << "First element: " << item << endl;
     }
 
     if (que.retrieve_last(last_item) == underflow) {
         cout << "Empty..." << endl;
+    } else {
+        cout << "Last element: " << last_item << endl;
     }
 
 
     que.print_que();
+
+
+    cout << "Test 2: " << endl;
+
+    que.empty();
+    que.leng();
+
+
+    que.print_que();
+
+
+
+    return 0;
 
 }

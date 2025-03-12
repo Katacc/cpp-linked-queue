@@ -13,11 +13,34 @@ Queue::Queue() {
     count = 0;
     front = 0;
     rear = 0;
+
+}
+
+Queue::Queue(const Queue &obj) {
+
+
+    first_node = nullptr;
+    last_node = nullptr;
+    count = 0;
+    front = 0;
+    rear = 0;
+
+
+    Node *current = obj.first_node;
+    while (current != nullptr) {
+        this->append(current->entry);
+        current = current->next;
+    }
+
 }
 
 
 Queue::~Queue() {
-    delete this;
+    while(first_node != nullptr) {
+        Node* temp = first_node;
+        first_node = first_node->next;
+        delete temp;
+    }
 }
 
 Error_code Queue::append(const Queue_entry &item) {
@@ -64,38 +87,64 @@ Error_code Queue::retrieve_last(Queue_entry &item) const {
 }
 
 Error_code Queue::serve() {
-    if (first_node == nullptr) {
+
+    Node *old_first = first_node;
+
+    if (count == 0) {
         return underflow;
 
     } else {
 
-        first_node = first_node->next;
+        first_node = old_first->next;
         count--;
 
         return success;
     }
 }
 
-void Queue::leng() {
-    std::cout << "length of queue: " << count << std::endl;
-}
-
-void Queue::print_que() {
+Error_code Queue::empty() {
     using namespace std;
+
 
     if (first_node == nullptr) {
         cout << "Queue empty..." << endl;
+        return underflow;
+    } else {
+        while (count > 0) {
+            serve();
+        }
+        return success;
+    }
+
+}
+
+int Queue::leng() const {
+    return count;
+}
+
+void Queue::print_que() const {
+    using namespace std;
+
+    if (count == 0) {
+        cout << "Queue empty..." << endl;
+
     } else {
 
         cout << "Printed queue: " << endl;
-        Queue_entry value;
+        double value;
 
         Queue temp_que = *this;
+
         while (temp_que.count > 0) {
             temp_que.retrieve_first(value);
             cout << value << endl;
-            temp_que.serve();
+            if (temp_que.serve() == underflow) {
+                break;
+            }
         }
+
+
+        cout << endl;
 
     }
 
