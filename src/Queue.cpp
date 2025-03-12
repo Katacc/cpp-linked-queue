@@ -126,8 +126,11 @@ Error_code Queue::serve() {
         first_node = old_first->next;
         count--;
 
+
         return success;
     }
+
+    delete old_first;
 }
 
 Error_code Queue::empty() {
