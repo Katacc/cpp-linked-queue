@@ -23,4 +23,5 @@ que.retrieve_last(last_item);   // Retrieves last element to a double called las
 que.print_que();    // Prints the Queue.
 que.serve();    // Removes the first element of the Queue.
 que.empty();    // Empties the Queue.
+que.serve_and_retrieve();   // Retrieves and deletes the first element of the Queue.
 ```

@@ -22,6 +22,7 @@ public:
     Error_code retrieve_first(Queue_entry &item) const;
     Error_code retrieve_last(Queue_entry &item) const;
     Error_code serve();
+    Error_code serve_and_retrieve(Queue_entry &item);
     Error_code empty();
     void print_que() const;
     int leng() const;

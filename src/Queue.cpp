@@ -133,6 +133,13 @@ Error_code Queue::serve() {
     delete old_first;
 }
 
+Error_code Queue::serve_and_retrieve(Queue_entry &item) {
+    if (retrieve_first(item) == underflow) return underflow;
+    if (serve() == underflow) return underflow;
+
+    return success;
+}
+
 Error_code Queue::empty() {
     using namespace std;
 
