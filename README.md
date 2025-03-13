@@ -4,12 +4,18 @@ This is my own implementation of linked queues aka node based queues. I wanted t
 
 ## Usage
 Yoink the Node and Queue files to your project and include `Queue.h` to your program
-```
+```C++
 #include "Queue.h"
 ```
 
-Heres an example, an also example can be found from `main.cpp`
+Compile your software with the .cpp files for example:
+```bash
+g++ *.cpp -o app
 ```
+
+
+Heres an example, an also example can be found from `main.cpp`
+```C++
 #include "Queue.h"
 
 Queue que;
