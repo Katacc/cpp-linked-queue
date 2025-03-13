@@ -11,8 +11,7 @@ Queue::Queue() {
     first_node = nullptr;
     last_node = nullptr;
     count = 0;
-    front = 0;
-    rear = 0;
+
 
 }
 
@@ -22,8 +21,7 @@ Queue::Queue(const Queue &obj) {
     first_node = nullptr;
     last_node = nullptr;
     count = 0;
-    front = 0;
-    rear = 0;
+
 
 
     Node *current = obj.first_node;
@@ -48,8 +46,6 @@ Queue& Queue::operator=(const Queue &obj) {
         first_node = nullptr;
         last_node = nullptr;
         count = 0;
-        front = 0;
-        rear = 0;
 
         // Copy nodes
         Node *current = obj.first_node;

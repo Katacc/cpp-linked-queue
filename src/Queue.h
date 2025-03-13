@@ -29,7 +29,6 @@ public:
 
 protected:
     int count;
-    int front, rear;
     Node *first_node;
     Node *last_node;
 
