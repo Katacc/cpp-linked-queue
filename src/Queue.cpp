@@ -80,8 +80,6 @@ Error_code Queue::append(const Queue_entry &item) {
         first_node = p0;
         last_node = p0;
 
-        first_node->next = last_node;
-
     } else {
         last_node->next = p0;
         last_node = p0;

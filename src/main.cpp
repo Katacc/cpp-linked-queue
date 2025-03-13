@@ -62,6 +62,18 @@ int main() {
 
     que.print_que();
 
+    cout << "Test 4: " << endl;
+
+    que.serve_and_retrieve(new_item);
+    cout << "Retrieved and served node: " << new_item << endl;
+
+
+    que.print_que();
+
+
+    que.serve_and_retrieve(new_item);
+    cout << "Retrieved and served node: " << new_item << endl;
+
 
     return 0;
 
