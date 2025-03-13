@@ -17,7 +17,7 @@ double item;
 double last_item;
 
 que.append(2);  // Adds an node with value of 2 to the Queue.
-que.len();  // Returns the length of the Queue
+que.leng();  // Returns the length of the Queue
 que.retrieve_first(item);   // Retrieves first element to a double called item
 que.retrieve_last(last_item);   // Retrieves last element to a double called last_item
 que.print_que();    // Prints the Queue.
